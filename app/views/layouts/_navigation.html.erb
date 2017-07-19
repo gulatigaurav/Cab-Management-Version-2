@@ -7,11 +7,12 @@
     </button>
     <a class="navbar-brand" href="#">CabMgmtVersion2</a>
     <div class="navbar-collapse collapse navbar-responsive-collapse">
+      <% if current_user %>
       <ul class="nav navbar-nav">
-        <li><%= link_to "Link1", "/path1"  %></li>
+        <li><%= link_to "Log out", destroy_user_session_path,method: :delete  %></li>
         <li><%= link_to "Link2", "/path2"  %></li>
         <li><%= link_to "Link3", "/path3"  %></li>
-      </ul>
+      </ul> <% end %>
     </div>
   </div>
 </div>
