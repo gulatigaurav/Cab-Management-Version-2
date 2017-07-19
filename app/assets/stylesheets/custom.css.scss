@@ -17,7 +17,18 @@ color: #000 !important;
   font-weight: bold;
   float: left;
 }
-
+.jumbo1{
+  text-align: center;
+  background-image: asset-url('1.jpg');
+  color: #fff;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+  background-size: cover;
+  height: 300  px;
+}
 
 .navbar{
   padding-bottom: 0% !important;

@@ -1,2 +1,24 @@
 
 <h1 class="text-center"> Welcome to monthly cab booking portal </h1>
+
+
+
+
+  <% if current_user %>
+
+<div class="jumbotron jumbo1">
+  <p>Here is a list of all cabs available with us . Kindly press on the downward link to display various details about the cabs that might help you to get familiar with the basic requirements for cab   <br>
+<br> <%=   link_to "Add Your Own Cab", "#" , class: "btn btn-primary"  %>  </p>
+</div>
+
+  <% else %>
+
+<div class="jumbotron jumbo1">
+  <p>Here is a list of all cabs available with us . Kindly press on the downward link to display various details about the cabs that might help the students to kindly search the perfect kind of cab according to their particular requirements. <br>
+
+</div>
+
+
+
+
+ <% end %>
