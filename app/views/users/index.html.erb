@@ -1,0 +1,15 @@
+<h1 class="text-center">
+  All CabBook Drivers
+</h1>
+<br>
+
+<div class="text-center">
+<% @users.each do |user| %>
+      <div class="well col-md-4 col-md-offset-4">
+         <%= link_to "#{user.email}", '#'%>
+      <br>
+        <small>  <%= user.cab.name if user.cab %>  </small>
+      </div>
+
+<% end %>
+</div>

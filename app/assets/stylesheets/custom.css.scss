@@ -3,6 +3,13 @@ padding: 0 !important ;
 padding-left: 5px;
 padding-top: 15px !important;
 text-align: center;
+
+.pic{
+
+   float: left;
+
+}
+
 a {
 color: black !important;
 margin: 0 !important;
@@ -32,8 +39,6 @@ color: #000 !important;
 
 .navbar{
   padding-bottom: 0% !important;
-
-
 }
 
 
@@ -59,6 +64,11 @@ color: #fff;
 margin-top: 15px;
 padding: 8px;
 }
+
+ .listing{
+  list-style: none !important;
+  padding-left: 0;
+ }
 
 .navbar-link:focus, .navbar-link:hover {
 background: #3071a9;

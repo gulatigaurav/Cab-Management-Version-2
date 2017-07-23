@@ -1,0 +1,29 @@
+<div class="text-center">
+<div class="well">
+<% if @cab.user = current_user %>
+
+
+<div class="cabs show">
+	<h2> SHOW  CAB  </h2>
+   <h3>Driver Email Id: <%= @cab.user.email %></h3>
+<div class="list-group">
+  <a href="#" class="list-group-item">CAR NAME                 :<%=@cab.name %></a>
+  <a href="#" class="list-group-item">MONTHLY FARE             : <%=@cab.monthly_rental%></a>
+  <a href="#" class="list-group-item">REGISTERATION NUMBER     : <%=@cab.reg_no%></a>
+<a href="#" class="list-group-item">TOTAL SEATS               : <%=@cab.seats%></a>
+<a href="#" class="list-group-item">AIR CONDITIONING PRESENT  :<%=@cab.aircond  ? 'True' : 'False' %></a>
+
+ <a href="#" class="list-group-item">SOURCE     : <%=@cab.source%></a>
+
+<a href="#" class="list-group-item">  ROUTE FOLLOWED     : <%= @cab.via   if @cab.via%></a>
+
+<a href="#" class="list-group-item">DESTINATION     :  NCU GURGAON </a>
+</div>
+
+
+
+<%= link_to 'Edit', edit_cab_path(@cab) %> |
+<% end %>
+<%= link_to 'Back', cabs_path %>
+</div>
+</div>
