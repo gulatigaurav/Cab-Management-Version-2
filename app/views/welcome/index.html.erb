@@ -6,19 +6,21 @@
 
   <% if current_user %>
 
-<div class="jumbotron jumbo1">
-  <p>Here is a list of all cabs available with us . Kindly press on the downward link to display various details about the cabs that might help you to get familiar with the basic requirements for cab   <br>
-<br> <%=   link_to "Add Your Own Cab", "#" , class: "btn btn-primary"  %>  </p>
-</div>
+  <div class="jumbotron jumbo1">
+    <p> <br> <br> <br> <br><br><br> Online Cab Booking System specializing in Hiring cabs to students. It is an online system through which students can view
+  available cabs; register the cabs, view profile and book cabs for monthly basis.
+  Cab booking service is a majortransport service provided by the
+  various local transportation companies to students  within a wide spectrum of prices. <br>
+    <br> <%=   link_to "Add Your Own Cab", "#" , class: "btn btn-primary"  %>  </p>
+  </div>
 
-  <% else %>
+    <% else %>
 
-<div class="jumbotron jumbo1">
-  <p>Here is a list of all cabs available with us . Kindly press on the downward link to display various details about the cabs that might help the students to kindly search the perfect kind of cab according to their particular requirements. <br>
-
-</div>
-
-
-
+  <div class="jumbotron jumbo1">
+    <p> <br> <br> <br><br> <br> <br><br><br> <br> Here is a list of all cabs available with us. <br> Kindly press on the downward link to display various details <br> about  the cabs that might help the students <br> to kindly search the perfect <br> kind of cab. <br>
+        <br>   </p>
+        <h1 class="travel_1 text-centre">Travel Hassel Free!!!</h1>
+  <%=   link_to "View all Cabs", cabs_path , class: "btn btn-primary btn-lg"  %>
+  </div>
 
  <% end %>
