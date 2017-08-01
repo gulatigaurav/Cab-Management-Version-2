@@ -13,11 +13,25 @@
     <div class="well-body">
       <br>
       <%= link_to 'Show', cab, class: "btn btn-primary" %>
+
     <% if cab.user == current_user %>
       <%= link_to 'Edit', edit_cab_path(cab), class: "btn btn-warning" %>
       <%= link_to 'Destroy', cab, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %>
-      <% end %>
-    </div></div>
+    <%= link_to 'Toggle status', toggle_status_cab_path(cab) ,class: "btn btn-wra" %>
+
+    <% else %>
+    <% end %>
+
+
+  </div>
+  <% if cab.available? %>
+  <span class="label label-success label_status"> Current status: <%= cab.status.capitalize %> </span>
+  <% elsif %>
+  <span class="label label-danger label_status"> Current status: <%= cab.status.capitalize %> </span>
+  <% end %>
+
+  </div>
     </div>
+
     <% end %>
 <br>

@@ -1,5 +1,5 @@
 class CabsController < ApplicationController
-  before_action :set_cab, only: [:show, :edit, :update, :destroy]
+  before_action :set_cab, only: [:show, :edit, :update, :destroy, :toggle_status]
 before_action :authenticate_user! , except: [:show, :index]
   def index
     @cabs = Cab.all
@@ -64,6 +64,17 @@ before_action :authenticate_user! , except: [:show, :index]
     end
 
   end
+
+   def toggle_status
+     if @cab.unavailable?
+      @cab.available!
+
+     elsif @cab.available?
+      @cab.unavailable!
+    end
+   redirect_to cabs_path
+   end
+
 
   private
     def set_cab
