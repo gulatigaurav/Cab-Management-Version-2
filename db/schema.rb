@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170801022212) do
+ActiveRecord::Schema.define(version: 20170809123724) do
 
   create_table "cabs", force: :cascade do |t|
     t.string   "name"
@@ -44,6 +44,9 @@ ActiveRecord::Schema.define(version: 20170801022212) do
     t.string   "unconfirmed_email"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "name"
+    t.text     "address"
+    t.text     "phone"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end

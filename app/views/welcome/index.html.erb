@@ -21,6 +21,14 @@
         <br>   </p>
         <h1 class="travel_1 text-centre">Travel Hassel Free!!!</h1>
   <%=   link_to "View all Cabs", cabs_path , class: "btn btn-primary btn-lg"  %>
+
+       <% if current_student && current_student.address.empty? && current_student.phone.empty?  %>   
+       <%=   link_to "Update your Details", edit_student_registration_path , class: "btn btn-warning btn-lg"  %>
+          <!-- <%= current_student.inspect %>   <!-- But if all exists then what should I do... -->
+       <% end %>
+
+
+
   </div>
 
  <% end %>
