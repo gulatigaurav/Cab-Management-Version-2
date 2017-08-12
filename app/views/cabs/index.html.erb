@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Secular+One');
 </style>
 
-
 <h1 class="custom_font1 text-center">All Availabe Cabs</h1>
      <% @cabs.each do |cab| %>
    <div class="text-center col-md-6 col-md-offset-3">
@@ -26,7 +25,7 @@
           <%=   link_to "Update your Details to Book", edit_student_registration_path , class: "btn btn-warning"  %>
        <% else %>
        <%= link_to 'Book Now', '#' ,class: "btn btn-success" %>
-       <% end %>
+        <% end %>
 
 
    <% end %>

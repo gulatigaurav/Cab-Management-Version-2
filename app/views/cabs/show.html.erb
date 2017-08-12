@@ -11,6 +11,7 @@
 <a href="#" class="list-group-item">AIR CONDITIONING PRESENT  :<%=@cab.aircond  ? 'True' : 'False' %></a>
 
  <a href="#" class="list-group-item">SOURCE     : <%=@cab.source%></a>
+ <a href="#" class="list-group-item">SERVICE AREA    :  <%= @cab.service_area %> </a>
 
 <a href="#" class="list-group-item">  ROUTE FOLLOWED     : <%= @cab.via   if @cab.via%></a>
 
@@ -19,10 +20,13 @@
 
 
 
-<%= link_to 'Edit', edit_cab_path(@cab),class: "btn btn-warning" %> |
    <% if current_user == @cab.user %>
+	 <%= link_to 'Edit', edit_cab_path(@cab),class: "btn btn-warning" %> |
 	 <%= link_to 'Back', cabs_path,class: "btn btn-info" %> |
 	 <%= link_to 'Delete', "#",class: "btn btn-danger" %>
+	 <% elsif current_student %>
+	 <%= link_to 'Book Now', '#',class: "btn btn-success" %> |
+	 <%= link_to 'Back', cabs_path,class: "btn btn-info" %>
 	 <% else %>
 	 <%= link_to 'Back', cabs_path,class: "btn btn-info" %>
 

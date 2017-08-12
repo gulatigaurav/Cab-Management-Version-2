@@ -1,8 +1,29 @@
 class CabsController < ApplicationController
   before_action :set_cab, only: [:show, :edit, :update, :destroy, :toggle_status]
-before_action :authenticate_user! , except: [:show, :index]
+before_action :authenticate_user! , except: [:show, :index, :search]
   def index
     @cabs = Cab.all
+  end
+
+  def search
+     if params[:cab]
+
+         if current_student && !current_student.address.empty? && !current_student.phone.empty?
+                 @cab = Cab.near(params[:cab],10).first
+                  #  binding.pry
+                            if @cab
+                              # render json: @cab
+                              #  render partial: 'cabs/lookup'
+                                  redirect_to cab_path(@cab)
+                              else
+                              flash[:alert] = 'No cabs found near your area.'
+                              redirect_to cabs_path
+                              end
+
+        else
+          flash[:alert]= 'Please update your details to continue searching cabs'
+        end
+     end
   end
 
   def show
