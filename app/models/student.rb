@@ -5,4 +5,9 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   before_save { self.email = email.downcase }
   validates_uniqueness_of :email
+
+
+
+  has_one :cab_student
+  has_one :cab, through: :cab_student
 end

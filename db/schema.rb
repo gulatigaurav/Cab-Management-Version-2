@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170809123724) do
+ActiveRecord::Schema.define(version: 20170812001339) do
+
+  create_table "cab_students", force: :cascade do |t|
+    t.integer "cab_id"
+    t.integer "student_id"
+    t.index ["cab_id"], name: "index_cab_students_on_cab_id"
+    t.index ["student_id"], name: "index_cab_students_on_student_id"
+  end
 
   create_table "cabs", force: :cascade do |t|
     t.string   "name"

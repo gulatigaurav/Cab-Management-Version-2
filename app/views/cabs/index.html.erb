@@ -18,14 +18,21 @@
       <%= link_to 'Edit', edit_cab_path(cab), class: "btn btn-warning" %>
       <%= link_to 'Destroy', cab, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger" %>
     <%= link_to 'Toggle status', toggle_status_cab_path(cab) ,class: "btn btn-wra" %>
-
-    <% else %>
     <% end %>
 
+  <% if current_student %>
+       <% if current_student.phone.empty? || current_student.address.empty? %>
+          <!-- <% link_to "Book Now", "#", class: "btn btn-wra brn-primary" %> -->
+          <%=   link_to "Update your Details to Book", edit_student_registration_path , class: "btn btn-warning"  %>
+       <% else %>
+       <%= link_to 'Book Now', '#' ,class: "btn btn-success" %>
+       <% end %>
 
+
+   <% end %>
   </div>
   <% if cab.available? %>
-  <span class="label label-success label_status"> Current status: <%= cab.status.capitalize %> </span>
+  <span class="label label-info label_status"> Current status: <%= cab.status.capitalize %> </span>
   <% elsif %>
   <span class="label label-danger label_status"> Current status: <%= cab.status.capitalize %> </span>
   <% end %>
